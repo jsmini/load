@@ -7,7 +7,7 @@
 [![NPM downloads](http://img.shields.io/npm/dm/@jsmini/load.svg?style=flat-square)](http://www.npmtrends.com/@jsmini/load)
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/jsmini/load.svg)](http://isitmaintained.com/project/jsmini/load "Percentage of issues still open")
 
-提供简单加载资源功能，比如js，css，img
+提供简单加载资源功能，比如js
 
 ## 兼容性
 单元测试保证支持如下环境：
