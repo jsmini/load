@@ -1,6 +1,6 @@
 {
   "name": "@jsmini/load",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "提供简单加载资源功能，比如js",
   "main": "dist/index.js",
   "jsnext:main": "dist/index.esm.js",
