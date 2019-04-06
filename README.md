@@ -38,36 +38,36 @@ unit test ensure it supports the following environments.
 npm installation
 
 ```bash
-$ npm install --save @jsmini/clone
+$ npm install --save @jsmini/load
 ```
 
 Node.js
 
 ```js
-var name = require('@jsmini/clone').name;
+var name = require('@jsmini/load').name;
 ```
 
 webpack
 
 ```js
-import { name } from '@jsmini/clone';
+import { name } from '@jsmini/load';
 ```
 
 Require.js
 
 ```js
-requirejs(['node_modules/@jsmini/clone/dist/index.aio.js'], function (jsmini_clone) {
-    var name = jsmini_clone.name;
+requirejs(['node_modules/@jsmini/load/dist/index.aio.js'], function (jsmini_load) {
+    var name = jsmini_load.name;
 })
 ```
 
 Browser
 
 ```html
-<script src="node_modules/@jsmini/clone/dist/index.aio.js"></script>
+<script src="node_modules/@jsmini/load/dist/index.aio.js"></script>
 
 <script>
-    var name = jsmini_clone.name;
+    var name = jsmini_load.name;
 </script>
 ```
 
@@ -118,12 +118,12 @@ $ npm run rename # rename command
 ```
 
 ## Contributors
-[contributors](https://github.com/jsmini/clone/graphs/contributors)
+[contributors](https://github.com/jsmini/load/graphs/contributors)
 
 ## CHANGELOG
-[CHANGELOG.md](https://github.com/jsmini/clone/blob/master/CHANGELOG.md)
+[CHANGELOG.md](https://github.com/jsmini/load/blob/master/CHANGELOG.md)
 
 ## TODO
-[TODO.md](https://github.com/jsmini/clone/blob/master/TODO.md)
+[TODO.md](https://github.com/jsmini/load/blob/master/TODO.md)
 
 ## who is using
