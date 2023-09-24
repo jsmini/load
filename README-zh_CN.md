@@ -1,23 +1,23 @@
-# [load](https://github.com/jsmini/load) 
+# [load](https://github.com/jsmini/load)
 
 [![](https://img.shields.io/badge/Powered%20by-jslib%20load-brightgreen.svg)](https://github.com/yanhaijing/jslib-load)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/jsmini/load/blob/master/LICENSE)
-[![Build Status](https://travis-ci.org/jsmini/load.svg?branch=master)](https://travis-ci.org/jsmini/load)
-[![npm](https://img.shields.io/badge/npm-0.2.1-orange.svg)](https://www.npmjs.com/package/@jsmini/load)
+[![CI](https://github.com/jsmini/load/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/jsmini/load/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/badge/npm-0.3.0-orange.svg)](https://www.npmjs.com/package/@jsmini/load)
 [![NPM downloads](http://img.shields.io/npm/dm/@jsmini/load.svg?style=flat-square)](http://www.npmtrends.com/@jsmini/load)
-[![Percentage of issues still open](http://isitmaintained.com/badge/open/jsmini/load.svg)](http://isitmaintained.com/project/jsmini/load "Percentage of issues still open")
+[![Percentage of issues still open](http://isitmaintained.com/badge/open/jsmini/load.svg)](http://isitmaintained.com/project/jsmini/load 'Percentage of issues still open')
 
 提供简单加载资源功能，比如js
 
 [English](./README.md) | 简体中文
 
 ## 兼容性
+
 单元测试保证支持如下环境：
 
-| IE   | CH   | FF   | SF   | OP   | IOS  | 安卓   |
-| ---- | ---- | ---- | ---- | ---- | ---- | ---- |
-| 6+   | 23+  | 4+   | 6+   | 10+  | 5+   | 2.3+ |
-
+| IE  | CH  | FF  | SF  | OP  | IOS | 安卓 |
+| --- | --- | --- | --- | --- | --- | ---- |
+| 6+  | 23+ | 4+  | 6+  | 10+ | 5+  | 2.3+ |
 
 ## 目录介绍
 
@@ -33,6 +33,7 @@
 ```
 
 ## 如何使用
+
 通过npm下载安装代码
 
 ```bash
@@ -54,9 +55,12 @@ import { name } from '@jsmini/load';
 如果你是requirejs环境
 
 ```js
-requirejs(['node_modules/@jsmini/load/dist/index.aio.js'], function (jsmini_load) {
+requirejs(
+  ['node_modules/@jsmini/load/dist/index.aio.js'],
+  function (jsmini_load) {
     var name = jsmini_load.name;
-})
+  },
+);
 ```
 
 如果你是浏览器环境
@@ -65,14 +69,16 @@ requirejs(['node_modules/@jsmini/load/dist/index.aio.js'], function (jsmini_load
 <script src="node_modules/@jsmini/load/dist/index.aio.js"></script>
 
 <script>
-    var name = jsmini_load.name;
+  var name = jsmini_load.name;
 </script>
 ```
 
 ## 文档
+
 [API](https://github.com/jsmini/load/blob/master/doc/api.md)
 
-## 贡献指南  ![PRs welcome](<https://img.shields.io/badge/PRs-welcome-brightgreen.svg>)
+## 贡献指南 ![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
+
 首次运行需要先安装依赖
 
 ```bash
@@ -115,12 +121,15 @@ $ npm run rename # 重命名命令
 ```
 
 ## 贡献者列表
+
 [contributors](https://github.com/jsmini/load/graphs/contributors)
 
 ## 更新日志
+
 [CHANGELOG.md](https://github.com/jsmini/load/blob/master/CHANGELOG.md)
 
 ## 计划列表
+
 [TODO.md](https://github.com/jsmini/load/blob/master/TODO.md)
 
 ## 谁在使用

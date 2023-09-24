@@ -1,7 +1,9 @@
 # 文档
+
 提供简单加载资源功能，比如js
 
 ## loadjs
+
 加载js功能，可配置缓存和编码
 
 函数参数和返回值（要遵守下面的例子的规则）
@@ -19,18 +21,22 @@
 loadjs('xxx.js');
 
 loadjs(
-    'xxx.js',
-    function success() { console.log('success') },
-    function error() { console.log('error')
-});
+  'xxx.js',
+  function success() {
+    console.log('success');
+  },
+  function error() {
+    console.log('error');
+  },
+);
 
 loadjs(
-    'xxx.js',
-    function success() {},
-    function error() {},
-    {
-        charset: 'gb2312',
-        cache: false,
-    }
+  'xxx.js',
+  function success() {},
+  function error() {},
+  {
+    charset: 'gb2312',
+    cache: false,
+  },
 );
 ```

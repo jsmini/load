@@ -1,15 +1,13 @@
-# [load](https://github.com/jsmini/load) 
+# [load](https://github.com/jsmini/load)
 
 [![](https://img.shields.io/badge/Powered%20by-jslib%20load-brightgreen.svg)](https://github.com/yanhaijing/jslib-load)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/jsmini/load/blob/master/LICENSE)
-[![Build Status](https://travis-ci.org/jsmini/load.svg?branch=master)](https://travis-ci.org/jsmini/load)
-[![npm](https://img.shields.io/badge/npm-0.2.1-orange.svg)](https://www.npmjs.com/package/@jsmini/load)
+[![CI](https://github.com/jsmini/load/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/jsmini/load/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/badge/npm-0.3.0-orange.svg)](https://www.npmjs.com/package/@jsmini/load)
 [![NPM downloads](http://img.shields.io/npm/dm/@jsmini/load.svg?style=flat-square)](http://www.npmtrends.com/@jsmini/load)
-[![Percentage of issues still open](http://isitmaintained.com/badge/open/jsmini/load.svg)](http://isitmaintained.com/project/jsmini/load "Percentage of issues still open")
+[![Percentage of issues still open](http://isitmaintained.com/badge/open/jsmini/load.svg)](http://isitmaintained.com/project/jsmini/load 'Percentage of issues still open')
 
 simple resource loader
-
-提供简单加载资源功能，比如js
 
 English | [简体中文](./README-zh_CN.md)
 
@@ -17,9 +15,9 @@ English | [简体中文](./README-zh_CN.md)
 
 unit test ensure it supports the following environments.
 
-| IE/Edge | Chrome | Firefox | Safari | Opera | IOS  | Android |
-| ------- | ------ | ------- | ------ | ----- | ---- | ------- |
-| 6+      | 23+    | 4+      | 6+     | 10+   | 5+   | 2.3+    |
+| IE/Edge | Chrome | Firefox | Safari | Opera | IOS | Android |
+| ------- | ------ | ------- | ------ | ----- | --- | ------- |
+| 6+      | 23+    | 4+      | 6+     | 10+   | 5+  | 2.3+    |
 
 ## Directory
 
@@ -35,6 +33,7 @@ unit test ensure it supports the following environments.
 ```
 
 ## Usage
+
 npm installation
 
 ```bash
@@ -56,9 +55,12 @@ import { name } from '@jsmini/load';
 Require.js
 
 ```js
-requirejs(['node_modules/@jsmini/load/dist/index.aio.js'], function (jsmini_load) {
+requirejs(
+  ['node_modules/@jsmini/load/dist/index.aio.js'],
+  function (jsmini_load) {
     var name = jsmini_load.name;
-})
+  },
+);
 ```
 
 Browser
@@ -67,7 +69,7 @@ Browser
 <script src="node_modules/@jsmini/load/dist/index.aio.js"></script>
 
 <script>
-    var name = jsmini_load.name;
+  var name = jsmini_load.name;
 </script>
 ```
 
@@ -75,8 +77,9 @@ Browser
 
 [API](https://github.com/jsmini/load/blob/master/doc/api.md)
 
-## Contributing Guide  ![PRs welcome](<https://img.shields.io/badge/PRs-welcome-brightgreen.svg>)
-when initialize, install dependencies 
+## Contributing Guide ![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
+
+when initialize, install dependencies
 
 ```bash
 $ npm install
@@ -88,13 +91,13 @@ builds your code for production to `build` folder
 $ npm run build
 ```
 
-run unit test.  notice: borwser enviroment need to test manually.  test file is in `test/browser`
+run unit test. notice: borwser enviroment need to test manually. test file is in `test/browser`
 
 ```bash
 $ npm test
 ```
 
-change  the  version in package.json and README.md, add your description in CHANGELOG.md, and then release it happily.
+change the version in package.json and README.md, add your description in CHANGELOG.md, and then release it happily.
 
 ```bash
 $ npm run release
@@ -106,7 +109,7 @@ publish the new package to npm
 $ npm publish --access=public
 ```
 
-rename  project. you need to edit project name when initialize project or anytime you want to rename the project . you need to rename `formName` and `toname` in file `rename.js`,which will automatically rename project name in the following files
+rename project. you need to edit project name when initialize project or anytime you want to rename the project . you need to rename `formName` and `toname` in file `rename.js`,which will automatically rename project name in the following files
 
 - README.md
 - package.json
@@ -118,12 +121,15 @@ $ npm run rename # rename command
 ```
 
 ## Contributors
+
 [contributors](https://github.com/jsmini/load/graphs/contributors)
 
 ## CHANGELOG
+
 [CHANGELOG.md](https://github.com/jsmini/load/blob/master/CHANGELOG.md)
 
 ## TODO
+
 [TODO.md](https://github.com/jsmini/load/blob/master/TODO.md)
 
 ## who is using

@@ -1,21 +1,27 @@
 {
   "name": "@jsmini/load",
-  "version": "0.2.1",
-  "description": "提供简单加载资源功能，比如js",
+  "version": "0.3.0",
+  "description": "simple resource loader",
   "main": "dist/index.js",
-  "jsnext:main": "dist/index.esm.js",
   "module": "dist/index.esm.js",
   "sideEffects": false,
   "scripts": {
     "rename": "node rename.js",
     "clean": "rimraf ./dist",
-    "lint": "eslint -c config/.eslintrc.js src",
-    "build:self": "rollup -c config/rollup.config.js",
-    "build:esm": "rollup -c config/rollup.config.esm.js",
-    "build:aio": "rollup -c config/rollup.config.aio.js",
-    "build": "npm run clean && npm run build:self && npm run build:esm &&  npm run build:aio",
-    "test": "npm run lint && npm run build && echo 'please open browser to test'",
-    "release": "npm test && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags"
+    "lint": "eslint -c .eslintrc.cjs 'src/**/*.js'",
+    "build:self": "rollup -c config/rollup.config.cjs",
+    "build:esm": "rollup -c config/rollup.config.esm.cjs",
+    "build:aio": "rollup -c config/rollup.config.aio.cjs",
+    "build": "npm run clean && npm run build:self && npm run build:esm && npm run build:aio",
+    "test": "cross-env NODE_ENV=test nyc mocha",
+    "release": "npm test && npm run build && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags",
+    "preinstall": "npx only-allow npm",
+    "start": "http-server -p 3000 -c-1",
+    "lint:fix": "eslint --fix -c .eslintrc.cjs 'src/**/*.js' --fix",
+    "prepare": "husky install",
+    "ci": "commit",
+    "cz": "git-cz",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
   "author": "yanhaijing",
   "license": "MIT",
@@ -27,23 +33,70 @@
     "url": "https://github.com/jsmini/load/issues"
   },
   "devDependencies": {
-    "babel-core": "6.26.0",
-    "babel-plugin-transform-runtime": "6.23.0",
-    "babel-preset-env": "1.6.1",
     "cdkit": "1.1.0",
-    "es5-shim": "4.5.10",
-    "eslint": "4.18.2",
-    "expect.js": "0.3.1",
-    "mocha": "3.5.3",
-    "rimraf": "2.6.2",
-    "rollup": "0.57.1",
-    "rollup-plugin-babel": "3.0.3",
-    "rollup-plugin-commonjs": "8.3.0",
-    "rollup-plugin-node-resolve": "3.0.3"
+    "es5-shim": "^4.6.7",
+    "eslint": "^8.49.0",
+    "expect.js": "^0.3.1",
+    "mocha": "^10.2.0",
+    "rimraf": "^5.0.1",
+    "rollup": "^3.29.2",
+    "@js-lib/cli": "^2.2.1",
+    "cross-env": "^7.0.3",
+    "http-server": "^14.1.1",
+    "@babel/eslint-parser": "^7.22.15",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-prettier": "^5.0.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^14.0.1",
+    "prettier": "3.0.3",
+    "commitizen": "^4.2.4",
+    "@commitlint/cli": "^16.2.1",
+    "@commitlint/config-conventional": "^16.2.1",
+    "@commitlint/cz-commitlint": "^16.2.1",
+    "@commitlint/format": "12.1.1",
+    "@commitlint/prompt-cli": "^16.2.1",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^25.0.4",
+    "@rollup/plugin-node-resolve": "^15.2.1",
+    "@rollup/plugin-terser": "^0.4.3",
+    "@babel/plugin-transform-runtime": "^7.22.15",
+    "@babel/preset-env": "^7.22.20",
+    "@babel/register": "^7.22.15",
+    "babel-plugin-istanbul": "^6.1.1",
+    "coveralls": "^3.1.1",
+    "nyc": "^15.1.0"
   },
   "dependencies": {
     "@jsmini/extend": "^0.3.1",
-    "@jsmini/guid": "^0.8.0",
-    "babel-runtime": "6.26.0"
+    "@jsmini/guid": "^0.8.0"
+  },
+  "files": [
+    "/dist",
+    "/types",
+    "*.d.ts"
+  ],
+  "engines": {
+    "node": ">=18.18.0 <19.0.0",
+    "npm": ">=9.8.1 <10.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "exports": {
+    "node": {
+      "import": "./dist/index.mjs",
+      "default": "./dist/index.js"
+    },
+    "default": {
+      "import": "./dist/index.mjs",
+      "default": "./dist/index.js"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
   }
 }

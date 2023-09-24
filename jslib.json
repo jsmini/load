@@ -1,0 +1,9 @@
+{
+  "name": "load",
+  "npmname": "@jsmini/load",
+  "umdname": "jsmini_load",
+  "username": "jsmini",
+  "type": "js",
+  "lang": "en",
+  "version": "2.2.1"
+}
